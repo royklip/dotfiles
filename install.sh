@@ -3,7 +3,7 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 
 # Install wget, git and ZSH
-sudo apt -y install wget git zsh nano
+sudo apt -y install wget git zsh nano python3-pip
 
 # Set default shell to ZSH
 sudo chsh -s $(which zsh)
