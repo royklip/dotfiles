@@ -1,9 +1,11 @@
+#!/bin/sh
+
 # Update system
 sudo apt-get -y update
 sudo apt-get -y upgrade
 
-# Install wget, git and ZSH
-sudo apt -y install wget git zsh nano python3-pip
+# Install packages
+sudo apt -y install wget zsh nano python3-pip python3.8-venv
 
 # Set default shell to ZSH
 sudo chsh -s $(which zsh)
@@ -16,8 +18,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-# Copy config files to home folder
-cp ~/.dotfiles/runcom/.bash_profile ~
-cp ~/.dotfiles/runcom/.zshrc ~
-cp ~/.dotfiles/runcom/.p10k.zsh ~
-cp ~/.dotfiles/git/.gitconfig ~
+# Create symlinks to home folder
+ln -s ~/projects/dotfiles/runcom/.bash_profile ~/.bash_profile
+ln -s ~/projects/dotfiles/runcom/.zshrc ~/.zshrc
+ln -s ~/projects/dotfiles/runcom/.p10k.zsh ~/.p10k.zsh
+ln -s ~/projects/dotfiles/git/.gitconfig ~/.gitconfig
