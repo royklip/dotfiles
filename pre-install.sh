@@ -8,7 +8,7 @@ sudo apt-get -y upgrade
 sudo apt -y install curl git
 
 # Create ssh key
-ssh-keygen -t ed25519 -C "royklip2@gmail.com"
+ssh-keygen -t ed25519 -C "royklip2@gmail.com" -f "$HOME/.ssh/id_ed25519" -N ""
 ssh-add ~/.ssh/id_ed25519
 
 # Add ssh key to Github
