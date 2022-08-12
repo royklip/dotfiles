@@ -14,7 +14,4 @@ USER docker
 WORKDIR /home/docker
 COPY pre-install.sh .
 
-RUN sudo chmod +x pre-install.sh
-RUN ./pre-install.sh
-
-CMD [ "/bin/sh" ]
+CMD [ "/bin/sh", "pre-install.sh"]
