@@ -1,20 +1,20 @@
 FROM ubuntu:20.04
 
+# Install sudo
 RUN apt-get update && apt-get -y install sudo
 
-# Install packages
-RUN apt -y install wget git zsh nano
-# RUN chsh -s $(which zsh)
-# RUN sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
+# Create docker user: password "docker"
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
+
 # Remove password requirement for sudo
-# RUN docker ALL=(ALL) NOPASSWD:ALL
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER docker
 
-WORKDIR /home/docker/.dotfiles
-COPY . .
+WORKDIR /home/docker
+COPY pre-install.sh .
 
-CMD ["/bin/bash"]
-# sh install.sh
+RUN sudo chmod +x pre-install.sh
+RUN ./pre-install.sh
+
+CMD [ "/bin/sh" ]
