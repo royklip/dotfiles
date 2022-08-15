@@ -102,7 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-for DOTFILE in `find $HOME/.dotfiles/system`
+for DOTFILE in `find $HOME/projects/dotfiles/system`
 do
     [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
@@ -111,7 +111,7 @@ done
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/royklip/google-cloud-sdk/path.zsh.inc' ]; then . '/home/royklip/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f ~/google-cloud-sdk/path.zsh.inc ]; then . ~/google-cloud-sdk/path.zsh.inc; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/royklip/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/royklip/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f ~/google-cloud-sdk/completion.zsh.inc ]; then . ~/google-cloud-sdk/completion.zsh.inc; fi
