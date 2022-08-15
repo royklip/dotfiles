@@ -12,6 +12,6 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER docker
 
 WORKDIR /home/docker
-COPY pre-install.sh .
+COPY install.sh .
 
-CMD [ "/bin/sh", "pre-install.sh"]
+CMD [ "/bin/sh", "install.sh"]
