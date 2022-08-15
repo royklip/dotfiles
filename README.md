@@ -8,8 +8,5 @@ It is necessary to create a GitHub personal access token (PAT). Log into GitHub 
 
 Create a new token and give it ONLY the rights to write/read public keys and make the expiration date as small as possible! **Copy the key for the next step.**
 
-## Initial commands
-Download and run the `pre-install.sh` file first. This will install Git and clone the dotfiles repo.
-
 ## Install
-Now run `install.sh`.
+Download and run `install.sh`. This will install the necessary packages and clone the repo for getting the system files.
