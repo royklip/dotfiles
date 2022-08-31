@@ -5,4 +5,6 @@ alias themeconfig="nano ~/.p10k.zsh"
 alias activate="source venv/bin/activate"
 alias projects="cd ~/projects"
 
+alias poetryactivate="source $(poetry env info --path)/bin/activate"
+
 alias tf="terraform"
