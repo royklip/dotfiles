@@ -2,9 +2,10 @@ alias zshconfig="nano ~/.zshrc"
 alias bashconfig="nano ~/.bashrc"
 alias themeconfig="nano ~/.p10k.zsh"
 
-alias activate="source venv/bin/activate"
 alias projects="cd ~/projects"
 
+alias mkenv="python3 -m venv venv"
+alias activate="source venv/bin/activate"
 alias poetryactivate="source \"\$(poetry env list --full-path | grep Activated | cut -d' ' -f1 )/bin/activate\""
 
 alias tf="terraform"
