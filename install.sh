@@ -15,6 +15,7 @@ sh -c "$(wget -qO- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tool
 
 # Create ssh key
 ssh-keygen -t ed25519 -C "royklip2@gmail.com" -f "$HOME/.ssh/id_ed25519" -N ""
+eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 
 # Add ssh key to Github
