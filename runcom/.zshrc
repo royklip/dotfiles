@@ -110,8 +110,20 @@ done
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/tmp/google-cloud-sdk/path.zsh.inc' ]; then . '/tmp/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/home/royklip/google-cloud-sdk/path.zsh.inc' ]; then . '/home/royklip/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/tmp/google-cloud-sdk/completion.zsh.inc' ]; then . '/tmp/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/home/royklip/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/royklip/google-cloud-sdk/completion.zsh.inc'; fi
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
+source "$HOME/.rye/env"
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+source ~/.dbt-completion.bash
+
+eval "$(direnv hook zsh)"

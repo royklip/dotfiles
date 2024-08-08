@@ -5,7 +5,7 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 
 # Install git
-sudo apt -y install curl git wget zsh nano python3-pip python3.10-venv
+sudo apt -y install curl git wget zsh nano python3-pip python3.12-venv direnv
 
 # Set default shell to ZSH
 sudo chsh -s $(which zsh)
