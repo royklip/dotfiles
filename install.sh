@@ -8,7 +8,7 @@ sudo apt-get -y upgrade
 sudo apt -y install curl git wget zsh nano python3-pip python3.12-venv direnv
 
 # Set default shell to ZSH
-sudo chsh -s $(which zsh)
+chsh -s $(which zsh)
 
 # Install Oh My ZSH
 sh -c "$(wget -qO- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
